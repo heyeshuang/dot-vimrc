@@ -237,7 +237,7 @@ nnoremap ; :
 if has("gui_running")
     set go=aAce  " remove toolbar
     "set transparency=30
-    set guifont=Monaco:h13
+    set guifont=Monaco\ 13
     set showtabline=2
     set columns=140
     set lines=40
@@ -254,3 +254,7 @@ if has("gui_running")
     map <D-9> 9gt
     map <D-0> :tablast<CR>
 endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"modified by hh
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+set clipboard+=unnamed
