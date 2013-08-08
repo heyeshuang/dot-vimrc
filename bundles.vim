@@ -14,6 +14,7 @@ Bundle 'gmarik/vundle'
 Bundle 'Shougo/neocomplcache'
 Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
+Bundle 'SirVer/ultisnips'
 "Bundle 'honza/snipmate-snippets'
 Bundle 'mattn/zencoding-vim'
 Bundle 'Raimondi/delimitMate'
@@ -53,7 +54,7 @@ Bundle 'bronson/vim-trailing-whitespace'
 " Other Utils
 "-------------
 " Bundle 'humiaozuzu/fcitx-status'
-Bundle 'fcitx.vim'
+"Bundle 'fcitx.vim'
 Bundle 'nvie/vim-togglemouse'
 
 "----------------------------------------
@@ -101,5 +102,25 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'Lokaltog/vim-distinguished'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'fisadev/fisa-vim-colorscheme'
+
+"-------------
+"python
+"-------------
+Bundle 'klen/python-mode'
+Bundle 'davidhalter/jedi-vim'
+"-------------
+"for hh
+"-------------
+Bundle 'oplatek/Conque-Shell' 
+"shell in vim
+Bundle 'VimRepress' 
+"wordpress
+Bundle 'rest.vim'
+" restructured text supply
+Bundle 'slimv.vim'
+"lisp
+Bundle 'VimIM'
+"中文输入法，用ctrl+_呼出
+Bundle 'sophacles/vim-processing'
 
 filetype plugin indent on     " required!

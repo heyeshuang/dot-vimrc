@@ -1,7 +1,8 @@
 source ~/.vim/bundles.vim
 
 " encoding dectection
-set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+"set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 
 " enable filetype dectection and ft specific plugin/indent
 filetype plugin indent on
@@ -158,7 +159,7 @@ let NERDCompactSexyComs=1
 let g:user_zen_expandabbr_key='<C-j>'
 
 " powerline
-"let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
 
 " NeoComplCache
 let g:neocomplcache_enable_at_startup=1
@@ -166,25 +167,32 @@ let g:neoComplcache_disableautocomplete=1
 "let g:neocomplcache_enable_underbar_completion = 1
 "let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_enable_quick_match = 1
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 set completeopt-=preview
 
-imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
-smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+" imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
+" smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
+" imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+" smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType javascript,coffeescript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
 
+"snippets
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 " SuperTab
 "let g:SuperTabDefultCompletionType='context'
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
+"let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 let g:SuperTabRetainCompletionType=2
 
 " ctrlp
@@ -240,10 +248,11 @@ if has("gui_running")
     """""""Monaco looks good but,it's not for linux
     "set guifont=Monaco\ 13 
     set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
+    "set guifont=Inconsolata\ 13
     set showtabline=2
     set columns=140
     set lines=40
-    """""so could anybody know where D is on linux?
+    """""so anybody know where D is on linux?
     "noremap <D-M-Left> :tabprevious<cr> 
     "noremap <D-M-Right> :tabnext<cr>
     "map <D-1> 1gt
@@ -258,5 +267,17 @@ if has("gui_running")
     "map <D-0> :tablast<CR>
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 "前略，modified by hh
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+"map <F11> :!python2 %
+au BufRead *.py map <buffer> <F11> :w<cr>:!python % <cr>
+au BufRead *.coffee map :w :w<CR>:CoffeeMake! -b -o ../js<CR><cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let g:pymode = 0
+"close rope in python-mode and use jedi
+"let g:pymode_rope = 0
+"let g:jedi#auto_initialization = 0
+"let g:jedi#popup_on_dot = 0
+"autocmd  FileType python let b:did_ftplugin = 1
+"let coffee_compile_vert = 1
