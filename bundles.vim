@@ -11,8 +11,9 @@ Bundle 'gmarik/vundle'
 "------------------
 " Code Completions
 "------------------
-Bundle 'Shougo/neocomplcache'
-Bundle 'honza/vim-snippets'
+" Bundle 'Shougo/neocomplcache'
+Bundle 'Valloric/YouCompleteMe'
+" Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
 Bundle 'SirVer/ultisnips'
 "Bundle 'honza/snipmate-snippets'
@@ -47,6 +48,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
+" Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 Bundle 'bronson/vim-trailing-whitespace'
 
@@ -54,7 +56,7 @@ Bundle 'bronson/vim-trailing-whitespace'
 " Other Utils
 "-------------
 " Bundle 'humiaozuzu/fcitx-status'
-"Bundle 'fcitx.vim'
+Bundle 'fcitx.vim'
 Bundle 'nvie/vim-togglemouse'
 
 "----------------------------------------
@@ -107,20 +109,22 @@ Bundle 'fisadev/fisa-vim-colorscheme'
 "python
 "-------------
 Bundle 'klen/python-mode'
-Bundle 'davidhalter/jedi-vim'
+" Bundle 'davidhalter/jedi-vim'
 "-------------
 "for hh
 "-------------
-Bundle 'oplatek/Conque-Shell' 
+Bundle 'oplatek/Conque-Shell'
 "shell in vim
-Bundle 'VimRepress' 
+Bundle 'VimRepress'
 "wordpress
 Bundle 'rest.vim'
 " restructured text supply
 Bundle 'slimv.vim'
 "lisp
-Bundle 'VimIM'
+" Bundle 'VimIM'
 "中文输入法，用ctrl+_呼出
+"vim7.4支持fcitx，这个已经无所谓了
 Bundle 'sophacles/vim-processing'
+
 
 filetype plugin indent on     " required!

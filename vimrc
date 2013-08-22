@@ -161,16 +161,19 @@ let g:user_zen_expandabbr_key='<C-j>'
 " powerline
 let g:Powerline_symbols = 'fancy'
 
+" "vim-airline
+" let g:airline_powerline_fonts = 1
+
 " NeoComplCache
-let g:neocomplcache_enable_at_startup=1
-let g:neoComplcache_disableautocomplete=1
+" let g:neocomplcache_enable_at_startup=1
+" let g:neoComplcache_disableautocomplete=1
 "let g:neocomplcache_enable_underbar_completion = 1
 "let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_enable_quick_match = 1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-set completeopt-=preview
+" let g:neocomplcache_enable_smart_case=1
+" let g:neocomplcache_enable_quick_match = 1
+" let g:neocomplcache_min_syntax_length = 3
+" let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+" set completeopt-=preview
 
 " imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
 " smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
@@ -183,6 +186,17 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript,coffeescript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
+if has("autocmd") && exists("+omnifunc")
+     autocmd Filetype *
+   \ if &omnifunc == "" |
+   \ setlocal omnifunc=syntaxcomplete#Complete |
+   \ endif
+endif
+
+"YouCompleteMe
+let g:ycm_global_ycm_extra_conf =  'path'
+let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 
 "snippets
 " let g:UltiSnipsExpandTrigger="<tab>"
@@ -191,7 +205,7 @@ autocmd FileType c setlocal omnifunc=ccomplete#Complete
 
 " SuperTab
 "let g:SuperTabDefultCompletionType='context'
-let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
+let g:SuperTabDefaultCompletionType = '<C-Tab>'
 "let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 let g:SuperTabRetainCompletionType=2
 
@@ -246,14 +260,14 @@ if has("gui_running")
     set go=aAce  " remove toolbar
     "set transparency=30
     """""""Monaco looks good but,it's not for linux
-    "set guifont=Monaco\ 13 
-    set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
-    "set guifont=Inconsolata\ 13
+    "set guifont=Monaco\ 13
+    " set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
+    set guifont=Inconsolata\ 13
     set showtabline=2
     set columns=140
     set lines=40
     """""so anybody know where D is on linux?
-    "noremap <D-M-Left> :tabprevious<cr> 
+    "noremap <D-M-Left> :tabprevious<cr>
     "noremap <D-M-Right> :tabnext<cr>
     "map <D-1> 1gt
     "map <D-2> 2gt
@@ -266,17 +280,17 @@ if has("gui_running")
     "map <D-9> 9gt
     "map <D-0> :tablast<CR>
 endif
-""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 "前略，modified by hh
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 "map <F11> :!python2 %
 au BufRead *.py map <buffer> <F11> :w<cr>:!python % <cr>
-au BufRead *.coffee map :w :w<CR>:CoffeeMake! -b -o ../js<CR><cr>
+au BufRead *.coffee map :w :w<CR>:CoffeeMake! -b -o %:p:h/../js<CR><cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:pymode = 0
+" let g:pymode = 0
 "close rope in python-mode and use jedi
-"let g:pymode_rope = 0
+let g:pymode_rope = 0
 "let g:jedi#auto_initialization = 0
 "let g:jedi#popup_on_dot = 0
 "autocmd  FileType python let b:did_ftplugin = 1
