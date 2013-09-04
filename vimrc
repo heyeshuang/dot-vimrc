@@ -257,12 +257,12 @@ nnoremap ; :
 
 " for gvim
 if has("gui_running")
-    set go=aAce  " remove toolbar
+    set go=aAc  " remove toolbar
     "set transparency=30
     """""""Monaco looks good but,it's not for linux
     "set guifont=Monaco\ 13
     " set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
-    set guifont=Inconsolata\ 13
+    set guifont=Inconsolata\ 12
     set showtabline=2
     set columns=140
     set lines=40
