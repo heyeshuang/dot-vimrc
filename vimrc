@@ -286,11 +286,13 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 "map <F11> :!python2 %
 au BufRead *.py map <buffer> <F11> :w<cr>:!python % <cr>
-au BufRead *.coffee map :w :w<CR>:CoffeeMake! -b -o %:p:h/../js<CR><cr>
+au BufRead *.coffee map :w :w<CR>:CoffeeMake! -b -m -o %:p:h<CR><cr>
+" au BufRead *.coffee map :w :w<CR>:CoffeeMake! -b -o %:p:h/../js<CR><cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:pymode = 0
 "close rope in python-mode and use jedi
 let g:pymode_rope = 0
+set autochdir
 "let g:jedi#auto_initialization = 0
 "let g:jedi#popup_on_dot = 0
 "autocmd  FileType python let b:did_ftplugin = 1

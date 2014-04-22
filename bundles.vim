@@ -117,7 +117,8 @@ Bundle 'oplatek/Conque-Shell'
 "shell in vim
 Bundle 'VimRepress'
 "wordpress
-Bundle 'rest.vim'
+" Bundle 'rest.vim'
+Bundle 'Rykka/riv.vim'
 " restructured text supply
 Bundle 'slimv.vim'
 "lisp
